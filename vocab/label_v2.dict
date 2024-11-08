@@ -1,0 +1,35 @@
+Flaky	4011
+Flaky/ID	920
+Flaky/ID/API Behavior Differences	310
+Flaky/ID/Data Structure Implementation Differences	575
+Flaky/ID/Unordered Collection Access	35
+Flaky/NOD	1070
+Flaky/NOD/Concurrency	160
+Flaky/NOD/Concurrency/Async Wait	155
+Flaky/NOD/Environmental Dependencies	5
+Flaky/NOD/External State	50
+Flaky/NOD/External State/Reliance on External Resources	50
+Flaky/NOD/IO	65
+Flaky/NOD/Network	155
+Flaky/NOD/Network/Local	30
+Flaky/NOD/Network/Remote	125
+Flaky/NOD/Other	180
+Flaky/NOD/Other/Floating Point Operations	15
+Flaky/NOD/Other/Program Logic	15
+Flaky/NOD/Other/Unknown	150
+Flaky/NOD/Platform Dependency	90
+Flaky/NOD/Platform Dependency/OS	10
+Flaky/NOD/Platform Dependency/Runtime	75
+Flaky/NOD/Randomness	160
+Flaky/NOD/Randomness/Data	140
+Flaky/NOD/Randomness/Randomness Seed	5
+Flaky/NOD/Randomness/Stochastic Algorithms	5
+Flaky/NOD/Randomness/Too Restrictive Range	10
+Flaky/NOD/Time	205
+Flaky/NOD/Time/System Date	45
+Flaky/NOD/Time/Test Case Timeout	160
+Flaky/OD	1481
+Flaky/OD/IO	265
+Flaky/OD/Resource Leak	255
+Flaky/OD/Shared State	556
+Not Flaky	3278

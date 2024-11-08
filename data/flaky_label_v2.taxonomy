@@ -1,0 +1,12 @@
+Root	Flaky	Not Flaky
+Flaky	Flaky/ID	Flaky/NOD	Flaky/OD
+Flaky/NOD	Flaky/NOD/Concurrency	Flaky/NOD/Environmental Dependencies	Flaky/NOD/External State	Flaky/NOD/IO	Flaky/NOD/Network	Flaky/NOD/Other	Flaky/NOD/Platform Dependency	Flaky/NOD/Randomness	Flaky/NOD/Time
+Flaky/NOD/Other	Flaky/NOD/Other/Floating Point Operations	Flaky/NOD/Other/Program Logic	Flaky/NOD/Other/Unknown
+Flaky/OD	Flaky/OD/IO	Flaky/OD/Resource Leak	Flaky/OD/Shared State
+Flaky/ID	Flaky/ID/API Behavior Differences	Flaky/ID/Data Structure Implementation Differences	Flaky/ID/Unordered Collection Access
+Flaky/NOD/Randomness	Flaky/NOD/Randomness/Data	Flaky/NOD/Randomness/Randomness Seed	Flaky/NOD/Randomness/Stochastic Algorithms	Flaky/NOD/Randomness/Too Restrictive Range
+Flaky/NOD/Time	Flaky/NOD/Time/System Date	Flaky/NOD/Time/Test Case Timeout
+Flaky/NOD/Network	Flaky/NOD/Network/Local	Flaky/NOD/Network/Remote
+Flaky/NOD/Concurrency	Flaky/NOD/Concurrency/Async Wait
+Flaky/NOD/External State	Flaky/NOD/External State/Reliance on External Resources
+Flaky/NOD/Platform Dependency	Flaky/NOD/Platform Dependency/OS	Flaky/NOD/Platform Dependency/Runtime
