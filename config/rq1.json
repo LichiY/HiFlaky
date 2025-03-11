@@ -1,0 +1,112 @@
+{
+  "data": {
+    "dataset": "flakyv3",
+    "data_dir": "data",
+    "train_file": "flaky_token_train_v3.json",
+    "val_file": "flaky_token_val_v3.json",
+    "test_file": "FlakeFlagger_token_test.json",
+    "prob_json": "flaky_prob_v3.json",
+    "hierarchy": "flaky_label_v2.taxonomy"
+  },
+"ismap":true,
+  "unixcoder": {
+    "path": "/root/autodl-tmp/model/unixcoder-base"
+  },
+  "vocabulary": {
+    "dir": "vocab",
+    "vocab_dict": "unixcoder_word.dict",
+    "max_token_vocab": 51416,
+    "label_dict": "label_v2.dict"
+  },
+  "embedding": {
+    "token": {
+      "dimension": 768,
+      "type": "pretrain",
+      "pretrained_file": "../glove.6B/glove.6B.300d.txt",
+      "dropout": 0.5,
+      "init_type": "uniform"
+    },
+    "label": {
+      "dimension": 768,
+      "type": "random",
+      "dropout": 0.5,
+      "init_type": "kaiming_uniform"
+    }
+  },
+  "text_encoder": {
+    "max_length": 1023,
+    "RNN": {
+      "bidirectional": true,
+      "num_layers": 1,
+      "type": "GRU",
+      "hidden_dimension": 64,
+      "dropout": 0.1
+    },
+    "CNN": {
+      "kernel_size": [2, 3, 4],
+      "num_kernel": 100
+    },
+    "topK_max_pooling": 1
+  },
+  "structure_encoder": {
+    "type": "GCN",
+    "node": {
+      "type": "text",
+      "dimension": 768,
+      "dropout": 0.05
+    }
+  },
+  "model": {
+    "type": "HiAGM-TP",
+    "linear_transformation": {
+      "text_dimension": 768,
+      "node_dimension": 768,
+      "dropout": 0.5
+    },
+    "classifier": {
+      "num_layer": 1,
+      "dropout": 0.5
+    }
+  },
+  "train": {
+    "optimizer": {
+      "type": "Adam",
+      "learning_rate": 0.0001,
+      "lr_decay": 1.0,
+      "lr_patience": 5,
+      "early_stopping": 50
+    },
+    "batch_size": 32,
+    "start_epoch": 0,
+    "end_epoch": 250,
+    "loss": {
+      "classification": "BCEWithLogitsLoss",
+      "recursive_regularization": {
+        "flag": true,
+        "penalty": 0.000001
+      }
+    },
+    "device_setting": {
+      "device": "cuda",
+      "visible_device_list": "0",
+      "num_workers": 10
+    },
+    "checkpoint": {
+      "dir": "flaky_hiagm_tp_checkpoint",
+      "max_number": 10,
+      "save_best": ["Macro_F1", "Micro_F1"]
+    }
+  },
+  "eval": {
+    "batch_size": 64,
+    "threshold": 0.5
+  },
+  "test": {
+    "best_checkpoint": "best_micro_HiAGM-TP",
+    "batch_size": 64
+  },
+  "log": {
+    "level": "info",
+    "filename": "flaky_hiagm.log"
+  }
+}
