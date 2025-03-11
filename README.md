@@ -14,8 +14,6 @@ This is a list of all required python packages:
 - torch==2.3.0
 
 
-
-
 ### Dataset
 
 The data folder contains the following :
@@ -34,3 +32,18 @@ python train.py config/flaky_config_v3.json
 + learning rate decay schedule callback -> train_modules.trainer.update_lr
 + earlystop callback -> train.py 
 + Hyper-parameters are set in config.train
+
+### Replicating the experiment
+
+**Detecting flaky tests experiment (RQ1)**
+
+```python
+python evaluate.py config/rq1.json
+```
+
+**Multi-label classification experiment (RQ2)**
+
+```python
+python evaluate.py config/rq2.json
+```
+
