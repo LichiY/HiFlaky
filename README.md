@@ -25,7 +25,7 @@ The data folder contains the following :
 ### Train
 
 ```bash
-python train.py config/flaky_config_v3.json
+python train.py config/flaky_config.json
 ```
 
 + optimizer -> train.set_optimizer: default torch.optim.Adam
